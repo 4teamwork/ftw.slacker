@@ -4,14 +4,14 @@ import os
 version = '1.0.0'
 
 tests_require = [
-    'Plone',
+    'unittest2',
     'plone.app.testing'
 ]
 
 setup(
     name='ftw.slacker',
     version=version,
-    description='Uses webhooks to notify on slack channels.',
+    description='Uses webhooks to post messages into a slack channel.',
     long_description=(open('README.rst').read() + '\n' +
                       open(os.path.join('docs', 'HISTORY.txt')).read()),
     classifiers=[
@@ -21,7 +21,7 @@ setup(
         'Topic :: Software Development :: Libraries :: Python Modules',
     ],
 
-    keywords='',
+    keywords='ftw slacker slack webhoock api',
     author='4teamwork AG',
     author_email='mailto:info@4teamwork.ch',
     url='https://git.4teamwork.ch/ftw/ftw.slacker',
@@ -33,7 +33,9 @@ setup(
     zip_safe=False,
 
     install_requires=[
-        'setuptools'
+        'setuptools',
+        'Plone',
+        'requests',
     ],
     tests_require=tests_require,
     extras_require=dict(tests=tests_require),
