@@ -1,0 +1,33 @@
+Changelog
+=========
+
+1.2.1 (unreleased)
+------------------
+
+- Allow set product-config through environment variables.
+
+
+1.2.0 (2017-07-07)
+------------------
+
+- Add slack_webhook option for notifying slack about use of ``zauth``. [jone]
+
+
+1.1.1 (2016-03-22)
+------------------
+
+- Compatiblity with Plone 5 and Plone 4.3.8 (PlonePAS 5)
+  [buchi]
+
+
+1.1.0 (2015-04-09)
+------------------
+
+- Make SSL certificate verification configurable.
+  [lgraf]
+
+
+1.0.0 (2014-12-23)
+------------------
+
+- Initial release.
