@@ -9,7 +9,7 @@ Introduction
 
 The ``ftw.slacker`` is a Plone addon that provides an easy to use api to post messages into a Slack channel through Slack's webhooks api.
 
-For more information about slack webhooks see Slack's documentation about `Incoming Webhooks <https://api.slack.com/incoming-webhooks>`_
+For more information about slack webhooks see Slack's documentation about `Incoming Webhooks`_
 
 Installation
 ------------
@@ -18,7 +18,8 @@ Add the package as dependency to your setup.py:
 
 .. code:: python
 
-  setup(...
+  setup(
+        # ...
         install_requires=[
           'ftw.slacker',
         ])
@@ -32,7 +33,7 @@ or to your buildout configuration:
 
 and run buildout
 
-.. code:: ini
+.. code:: bash
 
   bin/buildout
 
@@ -44,7 +45,7 @@ Setup Slack webhook
 
 First of all, you need to setup a Slack webhook.
 
-Read the Slack documentation about `Incoming Webhooks <https://api.slack.com/incoming-webhooks>`_ and start
+Read the Slack documentation about `Incoming Webhooks`_ and start
 setting up your own webhock by follow the `incoming webhook integration <https://my.slack.com/services/new/incoming-webhook/>`_.
 
 Post message to Slack
@@ -110,7 +111,7 @@ Normally you don't want to store your webhook-url in your application code.
 
 Set your environment variable:
 
-.. code:: ini
+.. code:: bash
 
   export STANDARD_SLACK_WEBHOOK='https://hooks.slack.com/services/xxx'
 
@@ -136,7 +137,7 @@ Override the environment variable
 If you set the STANDARD_SLACK_WEBHOOK environment variable, you can still use a different
 slack webhook.
 
-.. code:: ini
+.. code:: bash
 
   export STANDARD_SLACK_WEBHOOK='https://hooks.slack.com/services/default-channel-id'
 
@@ -160,7 +161,7 @@ push to the same Slack webhook.
 You can either configure the standard slack webhook envoronment variable through buildout
 for each deployment, or you just define the default webhook url once in your server environment:
 
-.. code:: ini
+.. code:: bash
 
   export STANDARD_SLACK_WEBHOOK='https://hooks.slack.com/services/xxx'
 
@@ -187,7 +188,7 @@ Whitelist
 
 You could even do a whitelist for your deployments.
 
-.. code:: ini
+.. code:: bash
 
   export STANDARD_SLACK_WEBHOOK='https://hooks.slack.com/services/xxx'
   export DEACTIVATE_SLACK_NOTIFICATION deactivate
@@ -200,7 +201,7 @@ And for all whitelisted deployments, use the following buildout configuration:
   environment-vars +=
       DEACTIVATE_SLACK_NOTIFICATION
 
-This will reset the DEACTIVATE_SLACK_NOTIFICATION variable to ``''`
+This will reset the DEACTIVATE_SLACK_NOTIFICATION variable to ``''``
 
 Deactivate through webhook_url
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -268,7 +269,7 @@ All requests to the Slack-API will be handled within its own threads.
 All messages are sent in a separate thread so that it is non-blocking and does not
 crash the application on an error.
 
-The function ``notify_slack``returns the thread-object for further thread handlings (i.e. in testing) or none.
+The function ``notify_slack`` returns the thread-object for further thread handlings (i.e. in testing) or none.
 
 Links
 -----
@@ -282,3 +283,5 @@ Copyright
 This package is copyright by `4teamwork <http://www.4teamwork.ch/>`_.
 
 ``ftw.slacker`` is licensed under GNU General Public License, version 2.
+
+.. _Incoming Webhooks: https://api.slack.com/incoming-webhooks
