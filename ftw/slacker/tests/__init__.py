@@ -2,7 +2,7 @@ from contextlib import contextmanager
 from ftw.slacker.testing import FTW_SLACKER_FUNCTIONAL_TESTING
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
-from unittest2 import TestCase
+from unittest import TestCase
 from ftw.slacker import slack_notifier
 import transaction
 import os
