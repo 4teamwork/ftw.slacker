@@ -4,7 +4,6 @@ import os
 version = '1.0.2.dev0'
 
 tests_require = [
-    'unittest2',
     'plone.app.testing'
 ]
 
