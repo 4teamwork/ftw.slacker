@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0.2 (unreleased)
+1.0.2 (2017-07-31)
 ------------------
 
 - Use unittest instead unittest2 in tests.
