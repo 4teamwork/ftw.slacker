@@ -4,6 +4,9 @@ Changelog
 1.0.3 (unreleased)
 ------------------
 
+- Remove support for Plone 5.0.
+  [mbaechtold]
+
 - Test against Plone 5.1.
   [mbaechtold]
 
