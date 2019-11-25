@@ -1,7 +1,7 @@
 from ftw.slacker.interfaces import ISlackNotifier
 from threading import Thread
 from zope.component import getUtility
-from zope.interface import implements
+from zope.interface import implementer
 import os
 import requests
 
@@ -26,11 +26,11 @@ STANDARD_SLACK_WEBHOOK = 'STANDARD_SLACK_WEBHOOK'
 DEACTIVATE_SLACK_NOTIFICATION = 'DEACTIVATE_SLACK_NOTIFICATION'
 
 
+@implementer(ISlackNotifier)
 class SlackNotifier(object):
     """The default slack notifier utility posts a message into slack through
     a webhook.
     """
-    implements(ISlackNotifier)
 
     # Name of the request thread
     THREAD_NAME = 'SlackNotifier-Thread'
