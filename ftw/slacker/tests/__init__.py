@@ -6,6 +6,7 @@ from unittest import TestCase
 from ftw.slacker import slack_notifier
 import transaction
 import os
+import sys
 
 
 class FunctionalTestCase(TestCase):
@@ -19,6 +20,16 @@ class FunctionalTestCase(TestCase):
     def grant(self, *roles):
         setRoles(self.portal, TEST_USER_ID, list(roles))
         transaction.commit()
+
+    def assertItemsEqual(self, actual, expected, msg=None):
+        """Test that sequence expected contains the same elements as actual.
+           regardless of their order.
+
+           This method is renamed to assertCountEqual in Python 3.
+        """
+        if sys.version_info > (3, 0):
+            return self.assertCountEqual(actual, expected, msg)
+        return super(FunctionalTestCase, self).assertItemsEqual(actual, expected, msg)
 
 
 class ResponseStub(object):
